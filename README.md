@@ -17,7 +17,7 @@ This is a simple bot using Node.js / puppeteer that buys a Nike shoe when it dro
 ## Install git
 
 - Install [git](https://git-scm.com/downloads)
-- Test your Node.js installation: First open a terminal (in Windows, you can do `CTRL + R` then type `cmd` and hit `ENTER`), then type `git --version` and you should see something like `git version 2.8.1.windows.1` (the current version as of right now).
+- Test your git installation: First open a terminal (in Windows, you can do `CTRL + R` then type `cmd` and hit `ENTER`), then type `git --version` and you should see something like `git version 2.8.1.windows.1` (the current version as of right now).
 
 # Getting started
 
