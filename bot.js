@@ -1,20 +1,18 @@
 const puppeteer = require('puppeteer-extra');
 const pluginStealth = require("puppeteer-extra-plugin-stealth");
+const fs = require('fs');
 const {installMouseHelper} = require('./extras/install_mouse_helper');
 puppeteer.use(pluginStealth())
 
 // Debugging stuff
-const html_dump = 'htmls/bot_';
+const html_path = 'htmls/bot_';
 const screenshot_path = 'screenshots/bot_';
-let html = '';
-const fs = require('fs');
-
-// Logger for debugging
 const SimpleNodeLogger = require('simple-node-logger'),
 	opts = {
 		logFilePath: 'logs/' + 'bot.log',
 		timestampFormat:'YYYY-MM-DD HH:mm:ss.SSS'
 	};
+let html = '';
 
 
 // ####################################
@@ -26,7 +24,7 @@ const user = 'myname@gmail.com';
 const pass = 'mypassword';
 
 // cv_code: 3-digit credit card validation code for the card saved to your Nike.com account
-const cv_code = '999';
+const cv_code = '123';
 
 // size: the shoe size, as you see in the table of sizes on a product page, e.g., 'M 9 / W 10.5'
 const size = 'M 9 / W 10.5';
@@ -93,7 +91,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('1. Page loaded');	
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_1_loaded_" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_1_loaded_" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_1_loaded_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -117,7 +115,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('2. Selectors appeared');	
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_2_selectors_" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_2_selectors_" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_2_selectors_" + Math.floor(new Date() / 1000) + '.png'});	
 	}
 	//#### LOG / DEBUG END
@@ -145,7 +143,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('3. Found and clicked on size');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_3_size_clicked__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_3_size_clicked__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_3_size_clicked_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -169,7 +167,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('4. Scrolled to add button');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_4_scroll_to_add_button__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_4_scroll_to_add_button__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_4_scroll_to_add_button_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -193,7 +191,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('5. Clicked add button');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_5_clicked_add_button__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_5_clicked_add_button__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_5_clicked_add_button_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -230,7 +228,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('6. Logged in');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_6_logged_in__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_6_logged_in__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_6_logged_in_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -266,7 +264,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('7. Entered CV');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_7_entered_cv__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_7_entered_cv__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_7_entered_cv_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -289,7 +287,7 @@ const buy = false;
 	if(debug == true){	
 		log.info('8. Clicked Save & Continue');
 		html = await page.content();
-		fs.writeFileSync(html_dump + "_8_save_continue__" + Math.floor(new Date() / 1000) + ".html", html);
+		fs.writeFileSync(html_path + "_8_save_continue__" + Math.floor(new Date() / 1000) + ".html", html);
 		page.screenshot({path: screenshot_path + "_8_save_continue_" + Math.floor(new Date() / 1000) + '.png'});
 	}
 	//#### LOG / DEBUG END
@@ -312,7 +310,7 @@ const buy = false;
 		if(debug == true){	
 			log.info('9. Submitted Order');
 			html = await page.content();
-			fs.writeFileSync(html_dump + "_9_submitted_order__" + Math.floor(new Date() / 1000) + ".html", html);
+			fs.writeFileSync(html_path + "_9_submitted_order__" + Math.floor(new Date() / 1000) + ".html", html);
 			page.screenshot({path: screenshot_path + "_9_submitted_order_" + Math.floor(new Date() / 1000) + '.png'});
 		}
 		//#### LOG / DEBUG END
