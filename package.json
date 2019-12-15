@@ -11,5 +11,7 @@
   },
   "scripts": {
     "start": "node bot.js"
-  }
+  },
+  "author": "Tyler Burleigh <tylerburleigh@gmail.com>",
+  "license": "GPL3"
 }
