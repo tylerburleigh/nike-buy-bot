@@ -50,7 +50,7 @@ This is a simple bot using Node.js / puppeteer that buys a Nike shoe when it dro
 
 Once you've configured the bot, you can run it
 
-`npm start`
+`node bot.js`
 
 Ideally, you would run it right around the time of the drop.
 
