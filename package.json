@@ -1,0 +1,15 @@
+{
+  "name": "nike-drop-buy-bot",
+  "version": "1.0.0",
+  "description": "A bot using Node.js / puppeteer that buys a Nike shoe when it drops",
+  "dependencies": {
+    "puppeteer": "2.0.0",
+    "puppeteer-extra": "3.1.7",
+    "puppeteer-extra-plugin-stealth": "2.4.5",
+    "simple-node-logger": "18.12.23",
+    "fs": "0.0.1-security"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  }
+}
