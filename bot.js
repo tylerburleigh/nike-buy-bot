@@ -253,9 +253,9 @@ const buy = false;
 	
 	const target_frame = page.frames().find(frame => frame.url().includes('paymentcc.nike.com'));
 	
-    await target_frame.evaluate(
-      () => (document.getElementById("cvNumber").focus())
-    );	
+	await target_frame.evaluate(
+		() => (document.getElementById("cvNumber").focus())
+	);	
 	await target_frame.waitFor(1000);
 	await page.keyboard.type(cv_code, {delay: 10});
 	
